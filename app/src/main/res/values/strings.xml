@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Palindromos</string>
+    <string name="action_settings">Settings</string>
+    <string name="mensajeBienvenida">Bienvenido a esta sencilla aplicación</string>
+    <string name="instruccion">Ingrese una palabra para escribirla invertida y decir si es palíndromo o no.</string>
+    <string name="hintEditText01">Ingrese aquí la palabra o frase</string>
+    <string name="textButonVerificar">Verificar</string>
+    <string name="textButonLimpiar">Limpiar</string>
+    <string name="instruccionInicial">Ingrese una palabra y presione el botón verificar</string>
+
+    <string name="siPalindromo">SI es Palindromo!</string>
+    <string name="noPalindromo">NO es Palindromo!</string>
+
+</resources>
