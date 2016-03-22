@@ -20,4 +20,10 @@
     <string name="instrucionDescripcion">Para usar este aplicativo, sólo debe hacer clic en el botón de la parte inferior, con lo cual se mostraran los controles necesarios para operar. Luego escriba la palabra o frase que desea comprobar y presione el botón Verificar.</string>
     <string name="tgApp">Aplicación</string>
     <string name="tgInstrucciones">Instrucciones"</string>
+
+    <!--ACERCA DE-->
+    <string name="queEsPalindromoApp">Qué es Palíndromo App"</string>
+    <string name="acercaDePalindromoApp">Palíndromo App es una sencilla aplicación que determina si una palabra o frase puede ser catalogada como palíndromo, al verificar que cumple con las condiciones que deben cumplir este tipo de palabras o frases. Fue realizada con fines puramente académicos, su uso es gratuito, no muestra publicidad."</string>
+
+
 </resources>

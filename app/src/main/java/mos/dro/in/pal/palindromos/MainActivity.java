@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView resultado;
     TextView resultado2;
     EditText palabra;
-    ScrollView svApp;
-    ScrollView svInfo;
+    LinearLayout vistaApp;
+    LinearLayout vistaInstrucciones;
     ToggleButton toggle;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -59,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultado = (TextView) findViewById(R.id.tvResultado);
         resultado2 = (TextView) findViewById(R.id.tvResultado2);
         palabra = (EditText) findViewById(R.id.et01);
-        svApp = (ScrollView) findViewById(R.id.svApp);
-        svInfo = (ScrollView) findViewById(R.id.svInfo);
+        vistaApp = (LinearLayout) findViewById(R.id.vistaApp);
+        vistaInstrucciones = (LinearLayout) findViewById(R.id.vistaInstrucciones);
         toggle = (ToggleButton) findViewById(R.id.toggle);
 
         verificar.setOnClickListener(this);
@@ -69,11 +70,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    svApp.setVisibility(View.VISIBLE);
-                    svInfo.setVisibility(View.INVISIBLE);
+                    vistaApp.setVisibility(View.VISIBLE);
+                    vistaInstrucciones.setVisibility(View.INVISIBLE);
                 } else {
-                    svApp.setVisibility(View.INVISIBLE);
-                    svInfo.setVisibility(View.VISIBLE);
+                    vistaApp.setVisibility(View.INVISIBLE);
+                    vistaInstrucciones.setVisibility(View.VISIBLE);
                 }
             }
         });

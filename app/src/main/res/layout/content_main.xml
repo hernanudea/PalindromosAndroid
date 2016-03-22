@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relative"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -13,24 +12,25 @@
     tools:context="com.vel.dar.her.tododeportes.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <RelativeLayout
-        android:id="@+id/rlContenedor"
+
+    <ScrollView
+        android:id="@+id/scrolPrincipal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="0dp">
 
-        <ScrollView
-            android:id="@+id/svApp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:visibility="invisible">
+            android:layout_height="wrap_content">
 
+            <!--PRIMERA VISTA-->
             <LinearLayout
+                android:id="@+id/vistaApp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="invisible">
 
                 <TextView
                     android:id="@+id/tv01"
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     android:elevation="30dp"
                     android:gravity="center"
                     android:text="@string/textButonLimpiar"
@@ -110,19 +110,31 @@
                     android:textSize="15dp" />
             </LinearLayout>
 
-        </ScrollView>
-
-        <ScrollView
-            android:id="@+id/svInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:visibility="visible">
-
+            <!--SEGUNDA VISTA-->
             <LinearLayout
+                android:id="@+id/vistaInstrucciones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="0dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:elevation="20dp"
+                    android:text="@string/queEsPalindromoApp"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/acercaDePalindromoApp"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -147,7 +159,7 @@
                     android:layout_marginTop="16dp"
                     android:background="@color/colorAccent"
                     android:elevation="20dp"
-                    android:text="@string/instruccion"
+                    android:text="@string/tgInstrucciones"
                     android:textAlignment="center"
                     android:textSize="20dp" />
 
@@ -160,49 +172,44 @@
                     android:textSize="16dp" />
 
             </LinearLayout>
-        </ScrollView>
 
-    </RelativeLayout>
+            <!--VISTA FIJA-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rlContenedor"
-        android:gravity="end|bottom"
-        android:orientation="horizontal">
-
-        <ToggleButton
-            android:id="@+id/toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|right"
-            android:elegantTextHeight="false"
-            android:textOn="@string/tgInstrucciones"
-            android:textOff="@string/tgApp"/>
-
-        />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|left"
-            android:orientation="vertical">
-
-            <TextView
+            <LinearLayout
+                android:id="@+id/vistaFija"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/autor"
-                android:textSize="12dp" />
+                android:layout_below="@+id/vistaApp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="@string/version"
-                android:textSize="12dp" />
+                <ToggleButton
+                    android:id="@+id/toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:elegantTextHeight="false"
+                    android:textOff="@string/tgApp"
+                    android:textOn="@string/tgInstrucciones" />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="end"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/autor"
+                    android:textSize="12dp" />
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/version"
+                    android:textSize="12dp" />
 
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
