@@ -13,95 +13,196 @@
     tools:context="com.vel.dar.her.tododeportes.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ScrollView
-        android:id="@+id/sv"
+    <RelativeLayout
+        android:id="@+id/rlContenedor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="0dp">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/svApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/mensajeBienvenida"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/tv02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/instruccion"
+                    android:textAlignment="center"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/et01"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="33dp"
+                    android:hint="@string/hintEditText01"
+                    android:singleLine="true"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/btVerificar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="11dp"
+                    android:elevation="30dp"
+                    android:gravity="center"
+                    android:text="@string/textButonVerificar"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/tvResultado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:elevation="30dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvResultado2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:elevation="30dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btLimpiar"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:elevation="30dp"
+                    android:gravity="center"
+                    android:text="@string/textButonLimpiar"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/svInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:elevation="20dp"
+                    android:text="@string/preguntaPalindromo"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/respuestaPalindromo"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorAccent"
+                    android:elevation="20dp"
+                    android:text="@string/instruccion"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/instrucionDescripcion"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlContenedor"
+        android:gravity="end|bottom"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|right"
+            android:elegantTextHeight="false"
+            android:textOn="@string/tgInstrucciones"
+            android:textOff="@string/tgApp"/>
+
+        />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv01"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/mensajeBienvenida"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent"
-                android:textSize="25dp" />
+                android:text="@string/autor"
+                android:textSize="12dp" />
 
             <TextView
-                android:id="@+id/tv02"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/instruccion"
-                android:textAlignment="center"
-                android:textSize="18dp" />
+                android:gravity="right"
+                android:text="@string/version"
+                android:textSize="12dp" />
 
-            <EditText
-                android:id="@+id/et01"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="33dp"
-                android:layout_gravity="center"
-                android:hint="@string/hintEditText01"
-                android:singleLine="true"
-                android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/btVerificar"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="11dp"
-                android:elevation="30dp"
-                android:gravity="center"
-                android:text="@string/textButonVerificar"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22dp" />
-
-            <TextView
-                android:id="@+id/tvResultado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:elevation="30dp"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/tvResultado2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:elevation="30dp"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/btLimpiar"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="50dp"
-                android:elevation="30dp"
-                android:text="@string/textButonLimpiar"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15dp" />
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
+
 </RelativeLayout>

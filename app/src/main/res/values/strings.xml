@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Palindromos</string>
+    <string name="app_name">Palíndromos</string>
     <string name="action_settings">Settings</string>
     <string name="mensajeBienvenida">Bienvenido a esta sencilla aplicación</string>
     <string name="instruccion">Ingrese una palabra para escribirla invertida y decir si es palíndromo o no.</string>
@@ -7,8 +7,17 @@
     <string name="textButonVerificar">Verificar</string>
     <string name="textButonLimpiar">Limpiar</string>
     <string name="instruccionInicial">Ingrese una palabra y presione el botón verificar</string>
+    <string name="autor">by: Hernán Velásquez</string>
+    <string name="version">v: 1.0.0</string>
 
-    <string name="siPalindromo">SI es Palindromo!</string>
-    <string name="noPalindromo">NO es Palindromo!</string>
+    <string name="siPalindromo">SI es Palíndromo!</string>
+    <string name="noPalindromo">NO es Palíndromo!</string>
 
+    <!--EXPLICACIÓN-->
+    <string name="preguntaPalindromo">Qué es un Palíndromo"</string>
+    <string name="respuestaPalindromo">Según la RAE:\n Palabra o frase cuyas letras están dispuestas de tal manera que resulta la misma leída de izquierda a derecha que de derecha a izquierda; p. ej., anilina; dábale arroz a la zorra el abad."</string>
+    <string name="instrucion">Instrucciones para usar este aplicativo</string>
+    <string name="instrucionDescripcion">Para usar este aplicativo, sólo debe hacer clic en el botón de la parte inferior, con lo cual se mostraran los controles necesarios para operar. Luego escriba la palabra o frase que desea comprobar y presione el botón Verificar.</string>
+    <string name="tgApp">Aplicación</string>
+    <string name="tgInstrucciones">Instrucciones"</string>
 </resources>

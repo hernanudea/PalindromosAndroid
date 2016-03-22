@@ -11,9 +11,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView resultado;
     TextView resultado2;
     EditText palabra;
+    ScrollView svApp;
+    ScrollView svInfo;
+    ToggleButton toggle;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -53,9 +59,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultado = (TextView) findViewById(R.id.tvResultado);
         resultado2 = (TextView) findViewById(R.id.tvResultado2);
         palabra = (EditText) findViewById(R.id.et01);
+        svApp = (ScrollView) findViewById(R.id.svApp);
+        svInfo = (ScrollView) findViewById(R.id.svInfo);
+        toggle = (ToggleButton) findViewById(R.id.toggle);
 
         verificar.setOnClickListener(this);
         limpiar.setOnClickListener(this);
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    svApp.setVisibility(View.VISIBLE);
+                    svInfo.setVisibility(View.INVISIBLE);
+                } else {
+                    svApp.setVisibility(View.INVISIBLE);
+                    svInfo.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         //Toast.makeText(getApplicationContext(), R.string.instruccionInicial, Toast.LENGTH_LONG).show();
 
